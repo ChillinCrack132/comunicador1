@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../auth/login_screen.dart';
+import '../../features/audio_player/presentation/screens/home_screen.dart';
+
 
 class ChildHomeScreen extends StatelessWidget {
   const ChildHomeScreen({super.key});
@@ -13,14 +15,14 @@ class ChildHomeScreen extends StatelessWidget {
   }
 
   void _startPractice(BuildContext context) {
-    // Aquí podrías navegar a la pantalla de práctica
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Iniciar práctica')),
-    );
-  }
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const HomeScreen()),
+  );
+}
 
   void _viewStreak(BuildContext context) {
-    // Aquí podrías navegar a la pantalla de rachas
+    // Aquí se va a navegar a la pantalla de rachas
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Consultar racha')),
     );
@@ -47,7 +49,12 @@ class ChildHomeScreen extends StatelessWidget {
             ElevatedButton.icon(
               icon: const Icon(Icons.play_arrow),
               label: const Text('Empezar práctica'),
-              onPressed: () => _startPractice(context),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              },
               style: ElevatedButton.styleFrom(minimumSize: const Size.fromHeight(50)),
             ),
             const SizedBox(height: 20),
