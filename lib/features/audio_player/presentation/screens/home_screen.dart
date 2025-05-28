@@ -21,11 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
 // Lista de audios
 final List<String> audios = [
-  'assets/audios/perro.mp3',
-  'assets/audios/gato.mp3',
-  'assets/audios/pajaro.mp3',
-  'assets/audios/leon.mp3',
+  'audios/perro.mp3',
+  'audios/gato.mp3',
+  'audios/pajaro.mp3',
+  'audios/leon.mp3',
 ];
+
 
   // 2. Controladores de audio
   final AudioPlayer _audioPlayer = AudioPlayer();
